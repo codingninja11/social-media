@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
+  const [hashtag, setHashtag] = useState("");
 
   const postsCollectionRef = collection(db, "posts");
   let navigate = useNavigate();
@@ -14,7 +15,9 @@ function CreatePost({ isAuth }) {
     await addDoc(postsCollectionRef, {
       title,
       postText,
+      hashtag,
       author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
+      
     });
     navigate("/");
   };
@@ -47,6 +50,15 @@ function CreatePost({ isAuth }) {
             }}
           />
         </div>
+        <div className="inputGp">
+        <label> Hashtag:</label>
+        <input
+          placeholder="#hashtags"
+          onChange={(event) => {
+            setHashtag(event.target.value);
+          }}
+        />
+      </div>
         <button onClick={createPost}> Submit Post</button>
       </div>
     </div>

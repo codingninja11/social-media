@@ -5,24 +5,17 @@ body {
   padding: 0%;
   margin: 0%;
   font-family: Arial, Helvetica, sans-serif;
-  background: #b92b27; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #1565c0,
-    #b92b27
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #1565c0,
-    #b92b27
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #283c86;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #45a247, #283c86);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #45a247, #283c86); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 nav {
   margin: 0;
   width: 100%;
   height: 80px;
-  background-color: black;
+  background-color: rgb(27, 25, 25);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +27,8 @@ a {
   color: white;
   text-decoration: none;
   margin: 10px;
-  font-size: 25px;
+  font-size: 30px;
+  font-family: 'Abril Fatface';
 }
 
 .createPostPage {
@@ -42,13 +36,17 @@ a {
   height: calc(100vh - 80px);
   display: grid;
   place-items: center;
+  margin-top: 20px;
+  
 }
 
 .cpContainer {
   width: 500px;
   height: auto;
   padding: 20px;
-  background-color: black;
+  background: #948E99;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2E1437, #948E99);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2E1437, #948E99); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 12px;
   color: white;
   display: flex;
@@ -159,7 +157,10 @@ textarea {
   width: 600px;
   height: auto;
   max-height: 600px;
-  background-color: rgb(250, 250, 250);
+  background: #A770EF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 20px;
   padding: 20px;
@@ -186,9 +187,9 @@ textarea {
 }
 
 .deletePost button {
-  border: none;
-
-  background: none;
+  border: 1px solid black;
+  border-radius: 1rem;
+  background: beige;
   font-size: 30px;
   cursor: pointer;
 }
@@ -200,4 +201,16 @@ textarea {
   width: 100%;
   overflow: hidden;
   overflow-y: auto;
+}
+
+.post .hashtagContainer {
+  word-wrap: break-word;
+  height: auto;
+  max-height: 100px;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  font-weight: bolder;
+  font-size: 20px;
+  padding-top: 1rem;
 }

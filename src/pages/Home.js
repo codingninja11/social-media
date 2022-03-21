@@ -44,6 +44,7 @@ function Home({ isAuth }) {
               </div>
             </div>
             <div className="postTextContainer"> {post.postText} </div>
+            <div className="hashtagContainer"> {post.hashtag} </div>
             <h3>@{post.author.name}</h3>
           </div>
         );

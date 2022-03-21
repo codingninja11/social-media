@@ -41,10 +41,12 @@ function App() {
               justifyContent: "space-evenly",
               textDecoration: "none",
               color: "white",
-              backgroundColor: "black",
+              backgroundColor: "green",
               margin: "10px",
-              fontSize: "25px",
-              border: "none",
+              fontSize: "30px",
+              border: "1px solid white",
+              borderRadius:"1rem",
+              fontFamily: "Abril Fatface",
 
             }}
             onClick={signUserOut}> Log Out</button>
