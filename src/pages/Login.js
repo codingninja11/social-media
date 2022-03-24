@@ -11,9 +11,9 @@ function Login({ setIsAuth }) {
 
   const addUser = async (user) => {
     const data = await getDocs(userCollectionRef);
-    console.log(data);
+    // console.log(data);
     const userExists = data.docs.map((item) => item.data().email === user.email);
-    console.log(userExists);
+    // console.log(userExists);
     if(!userExists.includes(true)){
       await addDoc(userCollectionRef, user);
     }

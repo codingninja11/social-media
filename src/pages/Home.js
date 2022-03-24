@@ -22,7 +22,7 @@ function Home({ isAuth }) {
   return (
     <div className="homePage">
       {postLists.map((post, key) => {
-        console.log(post);
+        // console.log(post);
         return (
           <div className="post" key={key}>
             <div className="postHeader">
