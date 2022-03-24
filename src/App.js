@@ -1,32 +1,32 @@
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import CreatePost from "./pages/CreatePost";
-import Login from "./pages/Login";
-import { useState } from "react";
-import { signOut } from "firebase/auth";
-import { auth } from "./firebase-config";
+import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import CreatePost from './pages/CreatePost';
+import Login from './pages/Login';
+import { useState } from 'react';
+import { signOut } from 'firebase/auth';
+import { auth } from './firebase-config';
 
 function App() {
-  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'));
 
   const signUserOut = () => {
     signOut(auth).then(() => {
       localStorage.clear();
       setIsAuth(false);
-      window.location.pathname = "/login";
+      window.location.pathname = '/login';
     });
   };
 
   return (
     <Router>
-      <nav style={
-        {
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-        }
-      }>
+      <nav
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-evenly',
+        }}
+      >
         <Link to="/"> Home </Link>
 
         {!isAuth ? (
@@ -34,22 +34,25 @@ function App() {
         ) : (
           <>
             <Link to="/createpost"> Create Post </Link>
-            <button 
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-evenly",
-              textDecoration: "none",
-              color: "white",
-              backgroundColor: "green",
-              margin: "10px",
-              fontSize: "30px",
-              border: "1px solid white",
-              borderRadius:"1rem",
-              fontFamily: "Abril Fatface",
-
-            }}
-            onClick={signUserOut}> Log Out</button>
+            <button
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-evenly',
+                textDecoration: 'none',
+                color: 'white',
+                backgroundColor: 'green',
+                margin: '10px',
+                fontSize: '30px',
+                border: '1px solid white',
+                borderRadius: '1rem',
+                fontFamily: 'Abril Fatface',
+              }}
+              onClick={signUserOut}
+            >
+              {' '}
+              Log Out
+            </button>
           </>
         )}
       </nav>
